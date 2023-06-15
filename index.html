@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" href="static/BagelClip.png">
+    <title>The Bagel Site, Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="innerwrapper">
+    <h1 id="center">Hello,</h1>
+    <hr>
+    <div id="center">
+        <p>This marks the start of the bagel website.</p>
+            <p>In this website I will rate bagels.</p>
+            <p>In the future when I learn javascript I will add games to the website.</p>
+            <p>The whole reason this website is up currently is so that I can practice and grow my html, css, and javascript skills.</p>
+            <i><p id="slender">play this audio for a surprise...</p></i>
+
+            <audio controls src="static/Bagel.mp3"></audio>
+    
+
+        <h2>
+        <a  href="bagels.html" target="_self" title="This takes you to a list of bagels, obviously">
+            List of Bagels        
+        </a>
+        &nbsp &nbsp &nbsp &nbsp
+        <a  href="about-me.html" target="_self" title="This takes you to a page about me, the developer.">
+            About Me
+        </a>
+        </h2>
+    </div>
+</div>
+   <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js')}}"
+   ></script>
+   <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjjvj5M_ACzaVAKZknMomfY7yHEa_3BC0",
+      authDomain: "bagel-fd9bf.firebaseapp.com",
+      projectId: "bagel-fd9bf",
+      storageBucket: "bagel-fd9bf.appspot.com",
+      messagingSenderId: "847277863342",
+      appId: "1:847277863342:web:346f23a6eb7266d8df183f",
+      measurementId: "G-XVF2CXM83J"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
