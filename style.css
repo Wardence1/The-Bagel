@@ -38,4 +38,26 @@ p{
     background-color:antiquewhite;
 }
 
+a:hover{
+    color: darkorange;
+}
+
+a:link{
+    color: brown;
+}
+
+a:visited{
+    color: darkorange;
+}
+
+ul{
+    text-align: center;
+    list-style-position: inside;
+}
+li{
+    text-align:center;
+    font-size: large;
+    font-weight: bolder;
+}
+
 
