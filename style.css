@@ -12,10 +12,11 @@ body{
 hr{
     background-color: black;
     height: 1px;
+    
 }
 
 p{
-    font-size: large;
+    font-size: 20px;
     font-weight: bolder;
 }
 
@@ -23,16 +24,24 @@ p{
     font-weight: 100;
 }
 
-#box1{
+#textBox{
     border: 5px solid;
     height: auto;
-    width: 200px;
-    margin-right: 110px;
-    float:right;
+    width: 30%;
+    margin-right:5%;
+    margin-left: 5%;
 }
 
-#images{
-    margin-left: 110px;
+img:not(#imageLink){
+    margin-left: 10%;
+    height: auto;
+    width: 50%;
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #center{
@@ -69,12 +78,5 @@ li{
 #thick{
     background-color: black;
     height: 3px;
-}
-
-@media only screen and (min-width: 1200px) {
-    image {
-        width: 800px;
-    }
-    
 }
 
