@@ -15,8 +15,12 @@ hr{
     
 }
 
+h1{
+    font-size: 3vmin;
+}
+
 p{
-    font-size: 1vw;
+    font-size: 2vmin;
     font-weight: bolder;
 }
 
@@ -35,9 +39,9 @@ p{
 }
 
 img:not(#imageLink){
-    margin-left: 10%;
+    margin-left: 5%;
     height: auto;
-    width: 30%;
+    width: 40vmin;
 }
 
 #container{
@@ -54,6 +58,10 @@ img:not(#imageLink){
     width:100%;
     height:100%;
     background-color:antiquewhite;
+}
+
+a{
+    font-size: 2.5vmin;
 }
 
 a:hover{
@@ -74,7 +82,7 @@ ul{
 }
 li{
     text-align:center;
-    font-size: large;
+    font-size: 2vmin;
     font-weight: bolder;
 }
 #thick{
@@ -82,3 +90,9 @@ li{
     height: 3px;
 }
 
+#imagelink{
+    width: 10vmin;
+}
+h2{
+    font-size: 2.5vmin;
+}
