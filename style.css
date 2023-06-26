@@ -16,7 +16,7 @@ hr{
 }
 
 p{
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: bolder;
 }
 
@@ -37,7 +37,7 @@ p{
 img:not(#imageLink){
     margin-left: 10%;
     height: auto;
-    width: 50%;
+    width: 30%;
 }
 
 #container{
