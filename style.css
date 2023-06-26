@@ -4,8 +4,8 @@ body{
     background-position: center;
     background-size: cover;
     font-family: 'Roboto', Helvetica, sans-serif;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: clamp(10%,15%,20%);
+    margin-right: clamp(10%,15%,20%);
     
 }
 
@@ -30,6 +30,8 @@ p{
     width: 30%;
     margin-right:5%;
     margin-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 img:not(#imageLink){
