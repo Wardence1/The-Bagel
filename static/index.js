@@ -11,7 +11,7 @@ document.getElementById("nameButton").onclick = function() {
     else if (username == "I like bagels")
     {username = "I Like Bagels Too"}
     else if (username == "Jeb_")
-    {username = "Add toilets to Minecraft"}
+    {username = "add toilets to Minecraft!!!"}
     else if (username == "Jackson Kidwell")
     {username = "Me"}
 

@@ -34,7 +34,7 @@ label{
 }
 
 .textBox{
-    border: 5px solid;
+    border: .4vmin solid;
     height: auto;
     width: 30%;
     margin-right:5%;

@@ -1,0 +1,86 @@
+body{
+    background-color: antiquewhite;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+hr{
+    height: 1px;
+    background-color: black;
+}
+
+.text{
+    text-align:center;
+}
+
+.theBagel{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    width: 20vmin;
+    cursor: pointer;
+}
+
+.bagelCount{
+    display: block;
+    margin-top:12%;
+    text-align: center;
+    font-size: 4vmin;
+}
+
+.store{
+    justify-content: start;
+    position: absolute;
+    top: 1%;
+    right: 7%;
+    height: auto;
+    border: .5vmin solid;
+}
+
+.storeItem{
+    width: 3vmin;
+    position: relative;
+}
+
+.storeItemBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-bottom: 15%
+}
+
+.smallText{
+    font-size: 1vmin;
+    position:absolute;
+    padding-top: 20%;
+}
+
+.smallText2{
+    font-size: 1vmin;
+    position:absolute;
+    padding-top:40%;
+}
+
+
+.link{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    font-size: 2.5vmin;
+}
+
+.link:hover{
+    color: darkorange;
+}
+
+.link:link{
+    color: brown;
+}
+
+.link:visited{
+    color: darkorange;
+}
+
