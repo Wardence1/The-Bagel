@@ -43,6 +43,17 @@ label{
     padding-right: 2%;
 }
 
+.homeStick{
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    font-size: 2.5vmin;
+    background-color: grey;
+    color: black;
+    border: .4vmin solid black;
+    font-weight: bolder;
+}
+
 img:not(.imageLink){
     margin-left: 5%;
     height: auto;
@@ -65,19 +76,19 @@ img:not(.imageLink){
     background-color:antiquewhite;
 }
 
-a{
+a:not(.homeStick){
     font-size: 2.5vmin;
 }
 
-a:hover{
+a:hover:not(.homeStick){
     color: darkorange;
 }
 
-a:link{
+a:link:not(.homeStick){
     color: brown;
 }
 
-a:visited{
+a:visited:not(.homeStick){
     color: darkorange;
 }
 

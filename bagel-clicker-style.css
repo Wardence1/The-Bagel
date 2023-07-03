@@ -25,7 +25,7 @@ hr{
 
 .bagelCount{
     display: block;
-    margin-top:12%;
+    margin-top:9%;
     text-align: center;
     font-size: 4vmin;
 }
@@ -36,12 +36,26 @@ hr{
     top: 1%;
     right: 7%;
     height: auto;
+    width: 12%;
     border: .5vmin solid;
+    background-color:aliceblue;
+}
+
+.stats{
+    justify-content: start;
+    position: absolute;
+    top: 1%;
+    left: 7%;
+    height: auto;
+    width: auto;
+    border: .5vmin solid;
+    background-color:aliceblue;
 }
 
 .storeItem{
     width: 3vmin;
     position: relative;
+    padding-right: 2%;
 }
 
 .storeItemBox{
@@ -55,15 +69,22 @@ hr{
 .smallText{
     font-size: 1vmin;
     position:absolute;
-    padding-top: 20%;
+    padding-top: 25%;
 }
 
 .smallText2{
     font-size: 1vmin;
     position:absolute;
     padding-top:40%;
+    text-align: center;
 }
 
+.largeText{
+    font-size: 3vmin;
+    font-weight: bold;
+    position:absolute;
+    padding-top: 20%;
+}
 
 .link{
     position: absolute;
