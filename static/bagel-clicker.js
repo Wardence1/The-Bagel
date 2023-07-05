@@ -51,8 +51,6 @@ document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click
 document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice} Bagels / You Own: ${creamCheeseUpgrades}`;
 document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
 
-
-
 //The Bagel
 document.getElementById("theBagel").onclick = function() {
     bagelCount += bagelsPerClick;
@@ -66,10 +64,12 @@ document.getElementById("theBagel").onclick = function() {
         bagelCount += bagelsPerCritClick;
         bagelCount -= bagelsPerClick;
         document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
-        document.getElementById("critClick").innerHTML = `CRIT-CLICK`
-        
+        document.getElementById("critClick").innerHTML = `CRIT-CLICK`;
+        CRITCLICKS.style.transitionDuration="0s"
+        CRITCLICKS.style.opacity = 1;
     } else {
-        document.getElementById("critClick").innerHTML = ``
+        CRITCLICKS.style.transitionDuration="1s"
+        CRITCLICKS.style.opacity = 0;
     }
 
 }

@@ -156,6 +156,11 @@ hr{
     right:0;
     bottom:0;
     font-size: 3vmin;
+    transition-duration: 1s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-
+@keyframes fadeOut{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
