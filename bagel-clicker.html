@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bagel-clicker-style.css">
-    <link rel="icon" type="image/png" href="static/images/BagelClip.png">
+    <link rel="icon" type="image/png" href="static/images/Bagel-Clicker-Bagel.png">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <title>Bagel Clicker</title>
 </head>
-<body>
-    <h1 class="text">Bagel Clicker</h1>
+<body class="noSelect">
+    <h1 class="title">Bagel Clicker</h1>
     <p class="text">Welcome to Bagel Clicker a more click intensive version of Cookie Clicker.<br>
         (Crit-Clicks scale based on the amount of bagels you get per click.)
     </p>
 <!--The Bagel-->
-    <label id="bagelCount"class="bagelCount"></label>
-
+    <h3 id="critClick"class="critClick"></h3>
+    <label id="bagelCount"class="bagelCount"></label><br>
+    <div id="critClick"class="critClick"></div>
     <img id="theBagel" class="theBagel" src="static/images/Bagel-Clicker-Bagel.png">
-    
 <!--The Store-->
     <div class="store">
     <label style="font-size: 4vmin;">Store:</label>
     <hr>
+    
+
             <!--Plain Bagel-->
         <div class="storeItemBox" id="plainBagelUpgrade">
+            <div class="imageAndName">
         <img class="storeItem" src="static/images/Bagel-Clicker-Bagel.png">
-        <h3>Extra Plain Bagel</h3>
-        <p class="smallText" id="plainBagelPrice"></p>
-        <p class="smallText2">Increases bagels per click by 1</p>
+        <h3 class="storeItemName">Extra Plain Bagel</h3>
+    </div>
+        <p class="storeText" id="plainBagelPrice"></p>
+        <p class="storeText">Increases bagels per click by 1</p>
     </div>
         <hr>
-        <!--Cream Cheese-->
+        <!--Cream Cheese--> 
         <div class="storeItemBox" id="creamCheeseUpgrade">
+            <div class="imageAndName">
             <img class="storeItem" src="static/images/CreamCheese.png">
-            <h3>Cream Cheese</h3>
-            <p class="smallText" id="creamCheesePrice"></p>
-            <p class="smallText2">Gives you 1/10 more bagels per Crit-Click.</p>
+            <h3 class="storeItemName">Cream Cheese</h3>
+            </div>
+            <p class="storeText" id="creamCheesePrice"></p>
+            <p class="storeText">Increases chance of a Crit-Click by 1%</p>
         </div>
             <hr>
 
@@ -46,13 +53,13 @@
         <label style="font-size: 4vmin;">Stats:</label>
 <hr>
         <!--Bagels Per Click-->
-            <h3 id="BagelsPerClick"></h3>
+            <h3 class="statsStuff" id="BagelsPerClick"></h3>
             <hr>
         <!--Critical Click Chance-->
-        <h3 id="criticalClickChance"></h3>
+        <h3 class="statsStuff" id="criticalClickChance"></h3>
         <hr>
         <!--Amount Per Critical Click-->
-        <h3 id="criticalClickBagel"></h3>
+        <h3 class="statsStuff" id="criticalClickBagel"></h3>
         <hr>
 
     </div>

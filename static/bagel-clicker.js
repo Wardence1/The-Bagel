@@ -39,26 +39,41 @@ let plainBagelUpgrades = 0;
 //Cream Cheese
 let creamCheesePrice = 500;
 let creamCheeseUpgrades = 0;
-
+//Animations
+const CRITCLICKS = document.getElementById("critClick");
+theBagel = document.getElementById("theBagel");
+ 
 //Making Sure Everything Is Drawn
-document.getElementById("bagelCount").innerHTML = bagelCount;
-document.getElementById("plainBagelPrice").innerHTML = plainBagelPrice + " Bagels / You Own: " + plainBagelUpgrades;
-document.getElementById("BagelsPerClick").innerHTML = "Bagels Per Click: " + bagelsPerClick;
-document.getElementById("criticalClickBagel").innerHTML = "Bagels Per Crit-Click: " + bagelsPerCritClick;
-document.getElementById("creamCheesePrice").innerHTML = creamCheesePrice + " Bagels / You Own: " + creamCheeseUpgrades;
+document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
+document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice} Bagels / You Own: ${plainBagelUpgrades}`;
+document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
+document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
+document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice} Bagels / You Own: ${creamCheeseUpgrades}`;
+document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
+
+
 
 //The Bagel
 document.getElementById("theBagel").onclick = function() {
     bagelCount += bagelsPerClick;
-    document.getElementById("bagelCount").innerHTML = bagelCount;
-    
+    document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
+
+  
+
+    //Crit-Click
     critClick = Math.floor(Math.random() * 100) + 1;
     if (critClick <= critClickChance) {
         bagelCount += bagelsPerCritClick;
         bagelCount -= bagelsPerClick;
-        document.getElementById("bagelCount").innerHTML = bagelCount;
+        document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
+        document.getElementById("critClick").innerHTML = `CRIT-CLICK`
+        
+    } else {
+        document.getElementById("critClick").innerHTML = ``
     }
+
 }
+
 //Plain Bagel Upgrade
 document.getElementById("plainBagelUpgrade").onclick=function() {
     if (bagelCount >= plainBagelPrice){
@@ -78,21 +93,24 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
     if (bagelCount >= creamCheesePrice){
         bagelCount -= creamCheesePrice;
         creamCheeseUpgrades += 1;
-        creamCheesePrice *= 1.5;
+        creamCheesePrice *= 2.5;
+        critClickChance += 1;
         bagelsPerCritClick = bagelsPerClick * 2.5;
-        bagelsPerCritClick = bagelsPerCritClick * 1.1;
         bagelsPerCritClick = Math.round(bagelsPerCritClick);
         creamCheesePrice = Math.floor(creamCheesePrice);
     }
     
 }
 
+
+
 //Updates Every Millisecond
 setInterval(function() {
-    document.getElementById("criticalClickBagel").innerHTML = "Bagels Per Crit-Click: " + bagelsPerCritClick;
-        document.getElementById("bagelCount").innerHTML = bagelCount;
-        document.getElementById("plainBagelPrice").innerHTML = plainBagelPrice + " Bagels / You Own: " + plainBagelUpgrades;
-        document.getElementById("BagelsPerClick").innerHTML = "Bagels Per Click: " + bagelsPerClick;
-        document.getElementById("creamCheesePrice").innerHTML = creamCheesePrice + " Bagels / You Own: " + creamCheeseUpgrades;
-        document.getElementById("criticalClickChance").innerHTML= "Critical Click Chance: " + critClickChance + "%"
+    document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
+        document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
+        document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice} Bagels / You Own: ${plainBagelUpgrades}`;
+        document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
+        document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice} Bagels / You Own: ${creamCheeseUpgrades}`;
+        document.getElementById("criticalClickChance").innerHTML= `Crit-Click Chance: ${critClickChance}%`
+        hide = true;
 }, 100);
