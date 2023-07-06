@@ -64,6 +64,7 @@ hr{
     position: absolute;
     width: 0;
     -webkit-user-drag: none;
+    cursor: pointer;
 }
 
 .bagelCount{
