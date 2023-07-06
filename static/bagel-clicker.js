@@ -27,7 +27,7 @@ Critical Clicks: give you 5 bagels per critical hit, default chance is 5%.
 Add animations for the each bagel and critical clicks.
 Import/export system.
 */
-
+    
 
 //Basics
 let bagelsPerClick = 1;
@@ -249,3 +249,24 @@ function getCookie(name) {
         //Bagel Sandwich
         bagelSandwichPrice = getCookie("bagelSandwichPrice") * 1;
         bagelSandwichUpgrades = getCookie("bagelSandwichUpgrades") * 1;
+
+        
+    if (getCookie("firstTime") == null){
+        setCookie("firstTime", 1)
+           //Basics
+        setCookie("bagelCount", 0);
+        setCookie("bagelsPerClick", 1);
+        setCookie("bagelsPerCritClick", 2);
+        setCookie("critClickChance", 5);
+        setCookie("randomBagelChance", 10);
+        //Plain Bagel
+        setCookie("plainBagelPrice", 20);
+        setCookie("plainBagelUpgrades", 0);
+        //Cream Cheese
+        setCookie("creamCheesePrice", 500);
+        setCookie("creamCheeseUpgrades", 0);
+        //Bagel Sandwich
+        setCookie("bagelSandwichPrice", 1000);
+        setCookie("bagelSandwichUpgrades", 0);
+        location.reload()
+    }     
