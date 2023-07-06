@@ -122,7 +122,7 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
         creamCheeseUpgrades += 1;
         creamCheesePrice *= 1.5;
         if (critClickChance < 100){
-            critClickChance += 1.5;
+            critClickChance += 2;
         }
         if (critClickChance > 100){
             critClickChance = 100;
