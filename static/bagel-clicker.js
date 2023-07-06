@@ -122,7 +122,10 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
         creamCheeseUpgrades += 1;
         creamCheesePrice *= 1.5;
         if (critClickChance < 100){
-            critClickChance += 1;
+            critClickChance += 2;
+        }
+        if (critClickChance > 100){
+            critClickChance = 100;
         }
         bagelsPerCritClick = bagelsPerClick * 2.5;
         bagelsPerCritClick = Math.round(bagelsPerCritClick);
@@ -138,7 +141,7 @@ document.getElementById("bagelSandwichUpgrade").onclick=function() {
         bagelSandwichUpgrades += 1;
         bagelSandwichPrice *= 2;
         if (randomBagelChance < 100){
-            randomBagelChance += 3;
+            randomBagelChance += 4;
         }
         bagelsPerCritClick = bagelsPerClick * 2.5;
         bagelsPerCritClick = Math.round(bagelsPerCritClick);
@@ -182,7 +185,7 @@ SAVEBUTTON.addEventListener("click", () => {
     //Bagel Sandwich
     setCookie("bagelSandwichPrice", bagelSandwichPrice);
     setCookie("bagelSandwichUpgrades", bagelSandwichUpgrades);
-        window.alert("Your progress was saved successfully.")
+        window.alert("Your bagel's were saved successfully.")
 });
 
 
