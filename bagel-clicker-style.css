@@ -60,6 +60,12 @@ hr{
     filter:drop-shadow(150%)
 }
 
+.randomBagel{
+    position: absolute;
+    width: 0;
+    -webkit-user-drag: none;
+}
+
 .bagelCount{
     position:absolute;
     top: 22%;
@@ -104,6 +110,7 @@ hr{
     position:relative;
     padding-right: 2%;
     padding-left: 2%;
+    -webkit-user-drag: none;
 }
 
 .storeItemBox{

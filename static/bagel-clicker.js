@@ -1,3 +1,4 @@
+//This code belongs to Jackson Kidwell 2023.
 console.log("Welcome to the log for Bagel Clicker.")
 /*
 Welcome to the code of bagel clicker.
@@ -11,7 +12,6 @@ A saving feature
 
 IDEAS FOR UPGRADES:
 
-Cream Cheese: has a 50% chance to give you 5 extra bagels per click.
 Better Dough: 
 Oven: bakes 10 bagels every second
 
@@ -33,22 +33,30 @@ let bagelsPerClick = 1;
 let bagelCount = 0;
 let bagelsPerCritClick = 2;
 let critClickChance = 5;
+let randomBagelChance = 10;
 //Plain Bagel
 let plainBagelPrice = 20;
 let plainBagelUpgrades = 0;
 //Cream Cheese
 let creamCheesePrice = 500;
 let creamCheeseUpgrades = 0;
+//Bagel Sandwich
+let bagelSandwichPrice= 1000;
+let bagelSandwichUpgrades=0;
 //Animations
 const CRITCLICKS = document.getElementById("critClick");
+const randomBagel = document.getElementById("randomBagel");
 theBagel = document.getElementById("theBagel");
+//random
+
  
 //Making Sure Everything Is Drawn
 document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
-document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice} Bagels / You Own: ${plainBagelUpgrades}`;
+document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice.toLocaleString("en-US")} Bagels / You Own: ${plainBagelUpgrades}`;
 document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
 document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
-document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice} Bagels / You Own: ${creamCheeseUpgrades}`;
+document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice.toLocaleString("en-US")} Bagels / You Own: ${creamCheeseUpgrades}`;
+document.getElementById("bagelSandwichPrice").innerHTML = `${bagelSandwichPrice.toLocaleString("en-US")} Bagels / You Own: ${bagelSandwichUpgrades}`;
 document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
 
 //The Bagel
@@ -74,6 +82,24 @@ document.getElementById("theBagel").onclick = function() {
 
 }
 
+//Random Bagel
+setInterval(function(){randBagel = Math.floor(Math.random() * 100) + 1;
+if (randBagel <= randomBagelChance){
+    randomBagel.style.width = "5%";
+        let randX = Math.floor(Math.random() * 100) + 1;
+        let randY = Math.floor(Math.random() * 100) + 1;
+     randomBagel.style.top=randY + "%";
+    randomBagel.style.left=randX + "%";
+    console.log("test")
+}}, 5000);
+
+//Random Bagel Click
+document.getElementById("randomBagel").onclick=function() {
+    randomBagel.style.width = 0;
+    bagelCount += bagelsPerCritClick * 2;
+}
+
+
 //Plain Bagel Upgrade
 document.getElementById("plainBagelUpgrade").onclick=function() {
     if (bagelCount >= plainBagelPrice){
@@ -94,10 +120,26 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
         bagelCount -= creamCheesePrice;
         creamCheeseUpgrades += 1;
         creamCheesePrice *= 2.5;
-        critClickChance += 1;
+        if (critClickChance < 100){
+            critClickChance += 1;
+        }
         bagelsPerCritClick = bagelsPerClick * 2.5;
         bagelsPerCritClick = Math.round(bagelsPerCritClick);
         creamCheesePrice = Math.floor(creamCheesePrice);
+    }
+    
+}
+
+//Bagel Sandwich Upgrade
+document.getElementById("bagelSandwichUpgrade").onclick=function() {
+    if (bagelCount >= bagelSandwichPrice){
+        bagelCount -= bagelSandwichPrice;
+        bagelSandwichUpgrades += 1;
+        bagelSandwichPrice *= 2;
+        randomBagelChance += 3;
+        bagelsPerCritClick = bagelsPerClick * 2.5;
+        bagelsPerCritClick = Math.round(bagelsPerCritClick);
+        bagelSandwichPrice = Math.floor(bagelSandwichPrice);
     }
     
 }
@@ -108,9 +150,11 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
 setInterval(function() {
     document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
         document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
-        document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice} Bagels / You Own: ${plainBagelUpgrades}`;
+        document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice.toLocaleString("en-US")} Bagels / You Own: ${plainBagelUpgrades}`;
         document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
-        document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice} Bagels / You Own: ${creamCheeseUpgrades}`;
+        document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice.toLocaleString("en-US")} Bagels / You Own: ${creamCheeseUpgrades}`;
+        document.getElementById("bagelSandwichPrice").innerHTML = `${bagelSandwichPrice.toLocaleString("en-US")} Bagels / You Own: ${bagelSandwichUpgrades}`;
         document.getElementById("criticalClickChance").innerHTML= `Crit-Click Chance: ${critClickChance}%`
+        document.getElementById("randomClickBagel").innerHTML= `Bagels Per Random Bagel: ${bagelsPerCritClick * 2}`
         hide = true;
 }, 100);

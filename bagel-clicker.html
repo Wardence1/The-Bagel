@@ -18,6 +18,10 @@
     <label id="bagelCount"class="bagelCount"></label><br>
     <div id="critClick"class="critClick"></div>
     <img id="theBagel" class="theBagel" src="static/images/Bagel-Clicker-Bagel.png">
+<!--Random Bagel-->
+<img class="randomBagel" id="randomBagel" src ="static/images/Bagel-Clicker-Bagel.png"> 
+
+
 <!--The Store-->
     <div class="store">
     <label style="font-size: 4vmin;">Store:</label>
@@ -44,7 +48,16 @@
             <p class="storeText">Increases chance of a Crit-Click by 1%</p>
         </div>
             <hr>
-
+        <!--Bagel Sandwich--> 
+        <div class="storeItemBox" id="bagelSandwichUpgrade">
+            <div class="imageAndName">
+            <img class="storeItem" src="static/images/bagelSandwich.png">
+            <h3 class="storeItemName">Bagel Sandwich</h3>
+            </div>
+            <p class="storeText" id="bagelSandwichPrice"></p>
+            <p class="storeText">Increases chance of random bagels spawning</p>
+        </div>
+            
     </div>
 
 
@@ -61,7 +74,8 @@
         <!--Amount Per Critical Click-->
         <h3 class="statsStuff" id="criticalClickBagel"></h3>
         <hr>
-
+        <!--Amount Per Random Bagel-->
+        <h3 class="statsStuff" id="randomClickBagel"></h3>
     </div>
 
     <script type="text/javascript" src="static/bagel-clicker.js"></script>
