@@ -1,0 +1,92 @@
+<!--This code belongs to Jackson Kidwell 2023.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bagel-clicker-style.css">
+    <link rel="icon" type="image/png" href="static/images/Bagel-Clicker-Bagel.png">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Bagel Clicker</title>
+</head>
+<body class="noSelect">
+    <h1 class="title">Bagel Clicker</h1>
+    <p class="text">Welcome to Bagel Clicker a more click intensive version of Cookie Clicker.<br>
+        (Crit-Clicks scale based on the amount of bagels you get per click.)
+    </p>
+<!--The Bagel-->
+    <h3 id="critClick"class="critClick"></h3>
+    <label id="bagelCount"class="bagelCount"></label><br>
+    <div id="critClick"class="critClick"></div>
+    <img id="theBagel" class="theBagel" src="static/images/Bagel-Clicker-Bagel.png">
+<!--Random Bagel-->
+<img class="randomBagel" id="randomBagel" src ="static/images/Bagel-Clicker-Bagel.png"> 
+
+
+<!--The Store-->
+    <div class="store">
+    <label style="font-size: 4vmin;">Store:</label>
+    <hr>
+    
+
+            <!--Plain Bagel-->
+        <div class="storeItemBox" id="plainBagelUpgrade">
+            <div class="imageAndName">
+        <img class="storeItem" src="static/images/Bagel-Clicker-Bagel.png">
+        <h3 class="storeItemName">Extra Plain Bagel</h3>
+    </div>
+        <p class="storeText" id="plainBagelPrice"></p>
+        <p class="storeText">Increases bagels per click by 1</p>
+    </div>
+        <hr>
+        <!--Cream Cheese--> 
+        <div class="storeItemBox" id="creamCheeseUpgrade">
+            <div class="imageAndName">
+            <img class="storeItem" src="static/images/CreamCheese.png">
+            <h3 class="storeItemName">Cream Cheese</h3>
+            </div>
+            <p class="storeText" id="creamCheesePrice"></p>
+            <p class="storeText">Increases chance of a Crit-Click by 2%</p>
+        </div>
+            <hr>
+        <!--Bagel Sandwich--> 
+        <div class="storeItemBox" id="bagelSandwichUpgrade">
+            <div class="imageAndName">
+            <img class="storeItem" src="static/images/bagelSandwich.png">
+            <h3 class="storeItemName">Bagel Sandwich</h3>
+            </div>
+            <p class="storeText" id="bagelSandwichPrice"></p>
+            <p class="storeText">Increases chance of random bagels spawning</p>
+        </div>
+            
+    </div>
+
+
+    <!--Stats-->
+    <div class="stats">
+        <label style="font-size: 4vmin;">Stats:</label>
+<hr>
+        <!--Bagels Per Click-->
+            <h3 class="statsStuff" id="BagelsPerClick"></h3>
+            <hr>
+        <!--Critical Click Chance-->
+        <h3 class="statsStuff" id="criticalClickChance"></h3>
+        <hr>
+        <!--Amount Per Critical Click-->
+        <h3 class="statsStuff" id="criticalClickBagel"></h3>
+        <hr>
+        <!--Amount Per Random Bagel-->
+        <h3 class="statsStuff" id="randomClickBagel"></h3>
+    </div>
+
+
+    <!--Cookie Buttons-->
+    <div class="saveReset">
+    <button id="saveButton" style="margin-right:5%; width: 50%; height: 50%; font-size: 2vmin;">Save</button>
+    <button id="resetButton" style="width: 50%; height: 50%; font-size: 2vmin;">Reset</button>
+    </div>
+
+    <script type="text/javascript" src="static/bagel-clicker.js"></script>
+    <a href="index.html" target="_self" title="Brings you back to the home" class="link">Home</a>
+</body>
+</html>
