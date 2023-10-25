@@ -57,6 +57,7 @@ label{
     width:auto;
     height:100%;
     animation: spinningBagel 1s linear none infinite normal both;
+    -webkit-user-drag: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
