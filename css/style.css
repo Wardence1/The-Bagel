@@ -53,6 +53,16 @@ label{
     height: 5vmin;
 }
 
+.blogStick{
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    font-size: 2.5vmin;
+    font-weight: bolder;
+    width: 5vmin;
+    height: 5vmin;
+}
+
 .spinningBagel{
     width:auto;
     height:100%;
@@ -103,7 +113,7 @@ img:not(.imageLink){
     background-color:antiquewhite;
 }
 
-a:not(.homeStick){
+a:not(.homeStick ){
     font-size: 2.5vmin;
 }
 
@@ -163,4 +173,21 @@ input{
     text-align:center;
     font-size: 2vmin;
     font-weight: bolder;
+}
+
+.gridBlog {
+    font-size: 2vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(6, 11vw);
+    gap: .5vw;
+}
+
+.blogItem {
+    display: inline-grid;
+    border: .5vmin solid;
+    justify-content: space-around;
+    padding: 1vh;
+    text-align: center;
 }
