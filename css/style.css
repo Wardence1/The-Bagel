@@ -133,11 +133,13 @@ ul{
     text-align: center;
     list-style-position: inside;
 }
+
 li{
     text-align:center;
     font-size: 2vmin;
     font-weight: bolder;
 }
+
 .thick{
     background-color: black;
     height: .5vh;
@@ -146,6 +148,7 @@ li{
 .imagelink{
     width: 10vmin;
 }
+
 h2{
     font-size: 2.5vmin;
 }
@@ -190,4 +193,9 @@ input{
     justify-content: space-around;
     padding: 1vh;
     text-align: center;
+}
+
+.subImage {
+    color: rgb(178, 177, 177);
+    font-style: bold;
 }
