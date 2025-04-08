@@ -97,7 +97,7 @@ if (randBagel <= randomBagelChance){
 //Random Bagel Click
 document.getElementById("randomBagel").onclick=function() {
     randomBagel.style.width = 0;
-    bagelCount += bagelsPerCritClick * 2;
+    bagelCount += bagelsPerCritClick * 15;
 }
 
 
