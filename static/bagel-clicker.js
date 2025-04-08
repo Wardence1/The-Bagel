@@ -1,4 +1,4 @@
-//This code belongs to Jackson Kidwell 2023.
+//This code belongs to Jackson Kidwell 2023-2025.
 console.log("Welcome to the log for Bagel Clicker.")
 /*
 Welcome to the code of bagel clicker.
