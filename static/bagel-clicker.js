@@ -107,7 +107,7 @@ document.getElementById("plainBagelUpgrade").onclick=function() {
         bagelsPerClick += 1;
         bagelCount -= plainBagelPrice;
         plainBagelUpgrades += 1;
-        plainBagelPrice *= 1.25;
+        plainBagelPrice *= 1.15;
         bagelsPerCritClick = bagelsPerClick * 2.5;
         bagelsPerCritClick = Math.floor(bagelsPerCritClick);
         plainBagelPrice = Math.floor(plainBagelPrice);
@@ -120,7 +120,7 @@ document.getElementById("creamCheeseUpgrade").onclick=function() {
     if (bagelCount >= creamCheesePrice){
         bagelCount -= creamCheesePrice;
         creamCheeseUpgrades += 1;
-        creamCheesePrice *= 1.5;
+        creamCheesePrice *= 1.35;
         if (critClickChance < 100){
             critClickChance += 2;
         }
