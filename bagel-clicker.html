@@ -10,10 +10,8 @@
     <title>Bagel Clicker</title>
 </head>
 <body class="noSelect">
-    <h1 class="title">Bagel Clicker</h1>
-    <p class="text">Welcome to Bagel Clicker a more click intensive version of Cookie Clicker.<br>
-        (Crit-Clicks scale based on the amount of bagels you get per click.)
-    </p>
+  <h1 class="title">Bagel Clicker</h1>
+
 <!--The Bagel-->
     <h3 id="critClick"class="critClick"></h3>
     <label id="bagelCount"class="bagelCount"></label><br>
@@ -58,6 +56,16 @@
             <p class="storeText" id="bagelSandwichPrice"></p>
             <p class="storeText">Increases chance of random bagels spawning</p>
         </div>
+	<hr>
+        <!--Bagel Grandma--> 
+        <div class="storeItemBox" id="bagel_grandma_upgrade">
+            <div class="imageAndName">
+            <img class="storeItem" src="static/images/bagel_grandma.jpg">
+            <h3 class="storeItemName">Grandma</h3>
+            </div>
+            <p class="storeText" id="bagel_grandma_price"></p>
+            <p class="storeText">Gives you one bagel per second</p>
+        </div>
             
     </div>
 
@@ -77,6 +85,9 @@
         <hr>
         <!--Amount Per Random Bagel-->
         <h3 class="statsStuff" id="randomClickBagel"></h3>
+	<hr>
+	<!--Amount Per Second-->
+	<h3 class="statsStuff" id="bagels_per_second"></h3>
     </div>
 
 

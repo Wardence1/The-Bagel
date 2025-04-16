@@ -27,14 +27,15 @@ Critical Clicks: give you 5 bagels per critical hit, default chance is 5%.
 Add animations for the each bagel and critical clicks.
 Import/export system.
 */
-    
 
 //Basics
 let bagelsPerClick = 1;
 let bagelCount = 0;
 let bagelsPerCritClick = 2;
 let critClickChance = 5;
+let amount_random_bagel = bagelsPerCritClick * 18;
 let randomBagelChance = 10;
+let bagels_per_second = 0;
 //Plain Bagel
 let plainBagelPrice = 20;
 let plainBagelUpgrades = 0;
@@ -44,6 +45,10 @@ let creamCheeseUpgrades = 0;
 //Bagel Sandwich
 let bagelSandwichPrice= 1000;
 let bagelSandwichUpgrades=0;
+// Bagel Grandma
+let bagel_grandma_price = 10000;
+let bagel_grandma_upgrades = 0;
+
 //Animations
 const CRITCLICKS = document.getElementById("critClick");
 const randomBagel = document.getElementById("randomBagel");
@@ -55,6 +60,7 @@ theBagel = document.getElementById("theBagel");
 document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
 document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice.toLocaleString("en-US")} Bagels / You Own: ${plainBagelUpgrades}`;
 document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
+document.getElementById("bagels_per_second").innerHTML = `Bagels Per Second: ${bagels_per_second}`;
 document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
 document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice.toLocaleString("en-US")} Bagels / You Own: ${creamCheeseUpgrades}`;
 document.getElementById("bagelSandwichPrice").innerHTML = `${bagelSandwichPrice.toLocaleString("en-US")} Bagels / You Own: ${bagelSandwichUpgrades}`;
@@ -97,7 +103,7 @@ if (randBagel <= randomBagelChance){
 //Random Bagel Click
 document.getElementById("randomBagel").onclick=function() {
     randomBagel.style.width = 0;
-    bagelCount += bagelsPerCritClick * 15;
+    bagelCount += amount_random_bagel;
 }
 
 
@@ -107,7 +113,7 @@ document.getElementById("plainBagelUpgrade").onclick=function() {
         bagelsPerClick += 1;
         bagelCount -= plainBagelPrice;
         plainBagelUpgrades += 1;
-        plainBagelPrice *= 1.15;
+        plainBagelPrice *= 1.25;
         bagelsPerCritClick = bagelsPerClick * 2.5;
         bagelsPerCritClick = Math.floor(bagelsPerCritClick);
         plainBagelPrice = Math.floor(plainBagelPrice);
@@ -150,20 +156,37 @@ document.getElementById("bagelSandwichUpgrade").onclick=function() {
     
 }
 
+// Bagel Grandma Upgrade
+document.getElementById("bagel_grandma_upgrade").onclick=function() {
+    if (bagelCount >= bagel_grandma_price){
+        bagelCount -= bagel_grandma_price;
+        bagel_grandma_upgrades += 1;
+        bagel_grandma_price *= 2;
+	
+        bagels_per_second++;
+    }
+}
 
 
 //Updates Every Millisecond
 setInterval(function() {
+    amount_random_bagel = bagelsPerCritClick * 18;
     document.getElementById("criticalClickBagel").innerHTML = `Bagels Per Crit-Click: ${bagelsPerCritClick}`;
-        document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
-        document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice.toLocaleString("en-US")} Bagels / You Own: ${plainBagelUpgrades}`;
-        document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
-        document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice.toLocaleString("en-US")} Bagels / You Own: ${creamCheeseUpgrades}`;
-        document.getElementById("bagelSandwichPrice").innerHTML = `${bagelSandwichPrice.toLocaleString("en-US")} Bagels / You Own: ${bagelSandwichUpgrades}`;
-        document.getElementById("criticalClickChance").innerHTML= `Crit-Click Chance: ${critClickChance}%`
-        document.getElementById("randomClickBagel").innerHTML= `Bagels Per Random Bagel: ${bagelsPerCritClick * 2}`
+    document.getElementById("bagelCount").innerHTML = bagelCount.toLocaleString("en-US");
+    document.getElementById("plainBagelPrice").innerHTML = `${plainBagelPrice.toLocaleString("en-US")} Bagels / You Own: ${plainBagelUpgrades}`;
+    document.getElementById("BagelsPerClick").innerHTML = `Bagels Per Click: ${bagelsPerClick}`;
+    document.getElementById("creamCheesePrice").innerHTML = `${creamCheesePrice.toLocaleString("en-US")} Bagels / You Own: ${creamCheeseUpgrades}`;
+    document.getElementById("bagelSandwichPrice").innerHTML = `${bagelSandwichPrice.toLocaleString("en-US")} Bagels / You Own: ${bagelSandwichUpgrades}`;
+    document.getElementById("criticalClickChance").innerHTML= `Crit-Click Chance: ${critClickChance}%`
+    document.getElementById("randomClickBagel").innerHTML= `Bagels Per Random Bagel: ${amount_random_bagel}`
+    document.getElementById("bagel_grandma_price").innerHTML= `${bagel_grandma_price.toLocaleString("en-US")} Bagels / You Own: ${bagel_grandma_upgrades}`;
+    document.getElementById("bagels_per_second").innerHTML= `Bagels Per Second: ${bagels_per_second}`
 }, 100);
 
+//Updates Every Second
+setInterval(function() {
+    bagelCount += bagels_per_second;
+}, 1000);
 
 //Cookies
 const SAVEBUTTON = document.querySelector("#saveButton");
@@ -176,6 +199,7 @@ SAVEBUTTON.addEventListener("click", () => {
     setCookie("bagelsPerCritClick", bagelsPerCritClick);
     setCookie("critClickChance", critClickChance);
     setCookie("randomBagelChance", randomBagelChance);
+    setCookie("bagels_per_second", bagels_per_second)
     //Plain Bagel
     setCookie("plainBagelPrice", plainBagelPrice);
     setCookie("plainBagelUpgrades", plainBagelUpgrades);
@@ -185,7 +209,11 @@ SAVEBUTTON.addEventListener("click", () => {
     //Bagel Sandwich
     setCookie("bagelSandwichPrice", bagelSandwichPrice);
     setCookie("bagelSandwichUpgrades", bagelSandwichUpgrades);
-        window.alert("Your bagel's were saved successfully.")
+    // Bagel Grandma
+    setCookie("bagel_grandma_price", bagel_grandma_price);
+    setCookie("bagel_grandma_upgrades", bagel_grandma_upgrades);
+
+    window.alert("Your bagels were saved successfully.")
 });
 
 
@@ -199,6 +227,7 @@ RESETBUTTON.addEventListener("click", () => {
         setCookie("bagelsPerCritClick", 2);
         setCookie("critClickChance", 5);
         setCookie("randomBagelChance", 10);
+	setCookie("bagels_per_second", 0);
         //Plain Bagel
         setCookie("plainBagelPrice", 20);
         setCookie("plainBagelUpgrades", 0);
@@ -208,6 +237,10 @@ RESETBUTTON.addEventListener("click", () => {
         //Bagel Sandwich
         setCookie("bagelSandwichPrice", 1000);
         setCookie("bagelSandwichUpgrades", 0);
+	// Bagel Grandma
+	setCookie("bagel_grandma_price", 10000);
+	setCookie("bagel_grandma_upgrades", 0);
+	
         location.reload()
     }
 });
@@ -232,36 +265,42 @@ function getCookie(name) {
         if(element.indexOf(name) == 0){
             result = element.substring(name.length+1)
         }
-
+	
     })
     return result;
 }
-    //Cookies Drawn
-        //Basic
-        bagelCount = getCookie("bagelCount") * 1;
-        bagelsPerClick = getCookie("bagelsPerClick") * 1;
-        bagelsPerCritClick = getCookie("bagelsPerCritClick") * 1;
-        critClickChance = getCookie("critClickChance") * 1;
-        randomBagelChance = getCookie("randomBagelChance") * 1;
-        //Plain Bagel
-        plainBagelPrice = getCookie("plainBagelPrice") * 1;
-        plainBagelUpgrades = getCookie("plainBagelUpgrades") * 1;
-        //Cream Cheese
-        creamCheesePrice = getCookie("creamCheesePrice") * 1;
-        creamCheeseUpgrades = getCookie("creamCheeseUpgrades") * 1;
-        //Bagel Sandwich
-        bagelSandwichPrice = getCookie("bagelSandwichPrice") * 1;
-        bagelSandwichUpgrades = getCookie("bagelSandwichUpgrades") * 1;
+
+/* Cookies Drawn */
+//Basic
+bagelCount = getCookie("bagelCount") * 1;
+bagelsPerClick = getCookie("bagelsPerClick") * 1;
+bagelsPerCritClick = getCookie("bagelsPerCritClick") * 1;
+critClickChance = getCookie("critClickChance") * 1;
+randomBagelChance = getCookie("randomBagelChance") * 1;
+bagels_per_second = getCookie("bagels_per_second") * 1;
+//Plain Bagel
+plainBagelPrice = getCookie("plainBagelPrice") * 1;
+plainBagelUpgrades = getCookie("plainBagelUpgrades") * 1;
+//Cream Cheese
+creamCheesePrice = getCookie("creamCheesePrice") * 1;
+creamCheeseUpgrades = getCookie("creamCheeseUpgrades") * 1;
+//Bagel Sandwich
+bagelSandwichPrice = getCookie("bagelSandwichPrice") * 1;
+bagelSandwichUpgrades = getCookie("bagelSandwichUpgrades") * 1;
+// Bagel Grandma
+bagel_grandma_price = getCookie("bagel_grandma_price") * 1;
+bagel_grandma_upgrades = getCookie("bagel_grandma_upgrades") * 1;
 
         
     if (getCookie("firstTime") == null){
         setCookie("firstTime", 1)
-           //Basics
+        //Basics
         setCookie("bagelCount", 0);
         setCookie("bagelsPerClick", 1);
         setCookie("bagelsPerCritClick", 2);
         setCookie("critClickChance", 5);
         setCookie("randomBagelChance", 10);
+	setCookie("bagels_per_second", 0)
         //Plain Bagel
         setCookie("plainBagelPrice", 20);
         setCookie("plainBagelUpgrades", 0);
