@@ -270,6 +270,32 @@ function getCookie(name) {
     return result;
 }
 
+if (getCookie("firstTime") == null){
+    setCookie("firstTime", 1)
+    //Basics
+    setCookie("bagelCount", 0);
+    setCookie("bagelsPerClick", 1);
+    setCookie("bagelsPerCritClick", 2);
+    setCookie("critClickChance", 5);
+    setCookie("randomBagelChance", 10);
+    setCookie("bagels_per_second", 0)
+    //Plain Bagel
+    setCookie("plainBagelPrice", 20);
+    setCookie("plainBagelUpgrades", 0);
+    //Cream Cheese
+    setCookie("creamCheesePrice", 500);
+    setCookie("creamCheeseUpgrades", 0);
+    //Bagel Sandwich
+    setCookie("bagelSandwichPrice", 1000);
+    setCookie("bagelSandwichUpgrades", 0);
+    // Bagel Grandma
+    setCookie("bagel_grandma_price", 10000);
+    setCookie("bagel_grandma_upgrades", 0);
+    
+    location.reload()
+}     
+
+
 /* Cookies Drawn */
 //Basic
 bagelCount = getCookie("bagelCount") * 1;
@@ -290,25 +316,3 @@ bagelSandwichUpgrades = getCookie("bagelSandwichUpgrades") * 1;
 // Bagel Grandma
 bagel_grandma_price = getCookie("bagel_grandma_price") * 1;
 bagel_grandma_upgrades = getCookie("bagel_grandma_upgrades") * 1;
-
-        
-    if (getCookie("firstTime") == null){
-        setCookie("firstTime", 1)
-        //Basics
-        setCookie("bagelCount", 0);
-        setCookie("bagelsPerClick", 1);
-        setCookie("bagelsPerCritClick", 2);
-        setCookie("critClickChance", 5);
-        setCookie("randomBagelChance", 10);
-	setCookie("bagels_per_second", 0)
-        //Plain Bagel
-        setCookie("plainBagelPrice", 20);
-        setCookie("plainBagelUpgrades", 0);
-        //Cream Cheese
-        setCookie("creamCheesePrice", 500);
-        setCookie("creamCheeseUpgrades", 0);
-        //Bagel Sandwich
-        setCookie("bagelSandwichPrice", 1000);
-        setCookie("bagelSandwichUpgrades", 0);
-        location.reload()
-    }     
