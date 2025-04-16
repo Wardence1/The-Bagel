@@ -246,7 +246,9 @@ RESETBUTTON.addEventListener("click", () => {
 });
 
 function setCookie(name, value) {
-    document.cookie = `${name}=${value}; path=/`
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 10);
+    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 }
 
 function deleteCookie(name) {
